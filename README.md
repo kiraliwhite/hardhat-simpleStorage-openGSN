@@ -33,3 +33,6 @@ yarn deploy
 ```
 yarn call-contract-via-gsn
 ```
+
+Note: 
+The simplePaymaster.sol is not currently utilized in the local hardhat environment. However, if the SimpleStorage.sol needs to be deployed on the testnet or mainnet, the deployment of simplePaymaster.sol will be required in order to cover all the gas transaction fees for simplePaymaster.sol.
