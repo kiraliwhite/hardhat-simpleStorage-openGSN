@@ -1,7 +1,35 @@
+# Sample smart conract demo with GSN 
 
+This is a sample of using GSN with smart contract.
 
+This is the branch with GSN support.
+
+Running it now is slightly different, since GSN must be active when deploying the contract
+(this is no problem in testnet/mainnet, but requires one extra step on local network)
+
+In order to run it run these commands in different window each:
+
+1. Install dependencies:
+```
 yarn install
-yarn hardhat node
-yarn gsn start
-yarn deploy
+```
 
+2. Launch Hardhat node:
+```
+yarn hardhat node
+```
+
+3. Deploy GSN contracts, such as RelayHub, Paymaster and Forwarder, and start a Relay Server:
+```
+yarn gsn start
+```
+
+4. Deploy the SimpleStorage contract:
+```
+yarn deploy
+```
+
+5. Interact with simple storage smart contract
+```
+yarn call-contract-via-gsn
+```
