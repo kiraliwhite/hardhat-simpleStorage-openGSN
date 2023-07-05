@@ -6,7 +6,7 @@ pragma solidity 0.8.7;
 import "@opengsn/contracts/src/ERC2771Recipient.sol";
 
 //繼承openGSN
-contract SimpleStorage is ERC2771Recipient {
+contract simpleStorage is ERC2771Recipient {
   uint256 favoriteNumber;
 
   //版本
