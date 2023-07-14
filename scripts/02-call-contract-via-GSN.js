@@ -62,13 +62,20 @@ async function main() {
     },
     auditorsCount: 0,
   };
-  //通過這個config，您的應用程序將通過 GSN 路由請求。 “loggerUrl”是可選的：將其設置為 https://logger.opengsn.org，將使用指定的日誌級別將日誌發送到 opengsn 全局記錄器，以幫助 GSN 支持進行故障排除。
+  //通過這個config，您的應用程序將通過 GSN 路由請求。 “loggerUrl”是可選的：將其設置為 https://logger.opengsn.org，
+  //將使用指定的日誌級別將日誌發送到 opengsn 全局記錄器，以幫助 GSN 支持進行故障排除。
 
   //宣告一個新的gsnProvider，並且使用上述宣告的defaultProvider(Web3Provider)和config來初始化
   let gsnProvider = await RelayProvider.newProvider({
     provider: defaultProvider,
     config,
   });
+
+  // 或是乾脆把defaultProvider換成，用hardhat ethers的provider，這樣就不用宣告defaultProvider了
+  // let gsnProvider = await RelayProvider.newProvider({
+  //   provider: ethers.provider,
+  //   config,
+  // });
 
   await gsnProvider.init();
 
